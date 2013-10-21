@@ -1,0 +1,13 @@
+Source: jboss
+Section: unknown
+Priority: extra
+Maintainer: rualsa <alexsa.msu@gmail.com>
+Build-Depends: debhelper (>= 7.0.15~)
+Standards-Version: 3.9.1
+Homepage: http://www.jboss.org/jbossas/downloads/
+
+Package: jboss
+Architecture: any
+Depends: ${misc:Depends}
+Description: Java Application Server
+ This package provides a JBoss Application server.
