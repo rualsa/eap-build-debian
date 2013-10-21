@@ -1,0 +1,25 @@
+--- /dev/null
++++ b/Makefile
+@@ -0,0 +1,22 @@
++VERSION=6.1.1eap
++
++DEST=debian/jboss/opt/jboss
++
++all:
++
++	true
++
++clean:
++
++install:
++	cp -r appclient ${DEST}
++	cp -r bundles ${DEST}
++	cp -r domain ${DEST}
++	cp -r jboss-modules.jar ${DEST}
++	cp -r modules ${DEST}
++	cp -r version.txt ${DEST}
++	cp -r bin ${DEST}
++	cp -r docs ${DEST}
++	cp -r JBossEULA.txt ${DEST}
++	cp -r standalone ${DEST}
++	cp -r welcome-content ${DEST}
