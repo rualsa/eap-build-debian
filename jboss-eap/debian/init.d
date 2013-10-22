@@ -1,10 +1,10 @@
 #!/bin/sh
 #
-# /etc/init.d/jboss -- startup script for JBoss
+# /etc/init.d/jboss-eap -- startup script for JBoss
 #
 
 ### BEGIN INIT INFO
-# Provides:             jboss
+# Provides:             jboss-eap
 # Required-Start:       $remote_fs $network
 # Required-Stop:        $remote_fs $network
 # Should-Start:         $named
@@ -15,7 +15,7 @@
 # Description:          Provide JBoss startup/shutdown script
 ### END INIT INFO
 
-NAME=jboss
+NAME=jboss-eap
 DESC="JBoss Application Server"
 DEFAULT=/etc/default/$NAME
 
@@ -49,7 +49,7 @@ fi
 
 # Location of jboss
 if [ -z "$JBOSS_HOME" ]; then
-	JBOSS_HOME=/opt/jboss
+	JBOSS_HOME=/opt/${NAME}
 fi
 export JBOSS_HOME
 
