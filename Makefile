@@ -1,8 +1,8 @@
 VERSION=6.1.1
 
-ORIG_TAR=jboss_$(VERSION)eap-Final.orig.tar.gz
+ORIG_TAR=jboss-eap_$(VERSION).orig.tar.gz
 SOURCE_TAR=thirdparty/eap-build/work/jboss-eap-6.1-src/dist/target/jboss-eap-6.1.tar.gz
-DEST=src
+DEST=jboss-eap
 
 all: jboss/jar-versions.xml
 	(cd $(DEST); debuild -us -uc)
@@ -23,11 +23,11 @@ clean:
 	rm -rf $(DEST)/welcome-content
 	rm -f $(DEST)/Makefile   
 
-	rm -f jboss_$(VERSION)*.build
-	rm -f jboss_$(VERSION)*.changes
-	rm -f jboss_$(VERSION)*.deb
-	rm -f jboss_$(VERSION)*.debian.tar.gz
-	rm -f jboss_$(VERSION)*.dsc
+	rm -f jboss-eap_$(VERSION)*.build
+	rm -f jboss-eap_$(VERSION)*.changes
+	rm -f jboss-eap_$(VERSION)*.deb
+	rm -f jboss-eap_$(VERSION)*.debian.tar.gz
+	rm -f jboss-eap_$(VERSION)*.dsc
 
 	(cd $(DEST); debuild clean)
 	true

@@ -1,0 +1,9 @@
+appclient /opt/jboss
+bin /opt/jboss
+bundles /opt/jboss
+docs /opt/jboss
+jboss-modules.jar /opt/jboss
+modules /opt/jboss
+standalone /opt/jboss
+version.txt /opt/jboss
+welcome-content /opt/jboss
