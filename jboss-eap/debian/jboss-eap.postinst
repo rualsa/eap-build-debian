@@ -1,0 +1,41 @@
+#!/bin/sh
+set -e
+
+. /usr/share/debconf/confmodule
+TEMPLATE="/opt/jboss-eap/defaults.template"
+CONFFILE="/etc/default/jboss-eap"
+
+case "$1" in
+    configure)
+
+	# Generate $CONFFILE from debconf seetings and $TEMPLATE
+	db_version 2.0
+	db_get jboss-eap/username && JBOSS_USER="$RET" || JBOSS_USER="jboss"
+	db_get jboss-eap/groupname && JBOSS_GROUP="$RET" || JBOSS_GROUP="jboss"
+
+	tmpfile=`mktemp /tmp/jboss-eap.XXXXXXXXXX`
+	chmod 644 $tmpfile
+	cat $TEMPLATE \
+		| sed "s%^JBOSS_USER=.*$%JBOSS_USER=$JBOSS_USER%" \
+		| sed "s%^JBOSS_GROUP=.*$%JBOSS_GROUP=$JBOSS_GROUP%" \
+		>> $tmpfile
+	ucf --debconf-ok --sum-file /opt/jboss-eap/defaults.md5sum $tmpfile $CONFFILE
+	rm -f $tmpfile
+
+	if ! getent group "$JBOSS_GROUP" > /dev/null 2>&1 ; then
+	    addgroup --system "$JBOSS_GROUP" --quiet
+	fi
+	if ! id $JBOSS_USER > /dev/null 2>&1 ; then
+	    adduser --system --home /opt/jboss-eap --no-create-home \
+		--ingroup "$JBOSS_GROUP" --disabled-password --shell /bin/false \
+		"$JBOSS_USER"
+	fi
+	chown -R $JBOSS_USER:adm /var/log/jboss-eap
+	chmod 750 /var/log/jboss-eap
+
+	chown -Rh $JBOSS_USER:$JBOSS_GROUP /opt/jboss-eap
+    ;;
+esac
+
+#DEBHELPER#
+

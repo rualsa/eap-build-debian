@@ -1,0 +1,43 @@
+#!/bin/sh
+set -e
+
+#DEBHELPER#
+
+CONFFILE=/etc/default/jboss-eap
+
+case "$1" in
+    remove)
+
+    ;;
+
+    purge)
+        # ignore errors during purge
+        set +e
+        if [ -x "/usr/bin/ucf" ]; then
+            ucf --purge $CONFFILE
+        fi
+        rm -rf /var/log/jboss-eap $CONFFILE
+ 
+        # TODO not delete installed web apps
+        if [ -d "/opt/jboss-eap" ] ; then
+            rmdir --ignore-fail-on-non-empty /opt/jboss-eap
+        fi
+
+        # Remove user/group
+        db_get jboss-eap/username && JBOSS_USER="$RET" || JBOSS_USER="jboss"
+        db_get jboss-eap/groupname && JBOSS_GROUP="$RET" || JBOSS_GROUP="jboss"
+        deluser $JBOSS_USER
+        delgroup $JBOSS_GROUP
+
+        set -e
+    ;;
+
+    upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+        # Nothing to do here
+    ;;
+
+    *)
+        echo "$0 called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
