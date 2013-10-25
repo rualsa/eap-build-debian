@@ -16,7 +16,7 @@ JBOSS_USER=jboss
 
 # Run JBoss EAP with this grup ID.
 #
-UBOSS_GROUP=jboss
+JBOSS_GROUP=jboss
 
 # The mode jboss should start, standalone or domain
 #
