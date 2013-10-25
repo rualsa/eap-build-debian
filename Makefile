@@ -22,5 +22,9 @@ dist-clean: clean
 unpack: $(ORIG_TAR)
 	tar --strip-component 1 -xzvf $(ORIG_TAR) -C $(DEST)
 
-$(ORIG_TAR): 
+$(ORIG_TAR):
+	if ! [ -r $(SOURCE_TAR) ]; then \
+		(cd thirdparty/eap-build; ./build-eap.sh); \
+	fi;
+ 
 	cp ${SOURCE_TAR} ${ORIG_TAR}
