@@ -39,3 +39,5 @@ esac
 
 #DEBHELPER#
 
+db_stop
+
