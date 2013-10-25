@@ -1,13 +1,14 @@
 Source: jboss-eap
-Section: unknown
-Priority: extra
+Section: java
+Priority: optional
 Maintainer: rualsa <alexsa.msu@gmail.com>
-Build-Depends: debhelper (>= 8.0.0)
-Standards-Version: 3.9.3
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.4
 Homepage: <insert the upstream URL, if relevant>
 
 Package: jboss-eap
 Architecture: all
-Depends: ${misc:Depends}
+Depends: ${misc:Depends}, java7-rumtime | java6-runtime,
+	adduser, ucf
 Description: <insert up to 60 chars description>
  <insert long description, indented with spaces>

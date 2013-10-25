@@ -7,3 +7,5 @@ modules /opt/jboss-eap
 standalone /opt/jboss-eap
 version.txt /opt/jboss-eap
 welcome-content /opt/jboss-eap
+debian/defaults.template /opt/jboss-eap
+debian/defaults.md5sum /opt/jboss-eap

@@ -1,7 +1,7 @@
 Template: jboss-eap/username
 Type: string
 Default: jboss
-_Description: Dedicated system account for the jboss-eap daemon:
+Description: Dedicated system account for the jboss-eap daemon:
  The Jboss EAP server must use a dedicated account for its operation so that
  the system's security is not compromised by running it with superuser
  privileges.
@@ -9,7 +9,7 @@ _Description: Dedicated system account for the jboss-eap daemon:
 Template: jboss-eap/groupname
 Type: string
 Default: jboss
-_Description: Dedicated system group for the jboss-eap daemon:
+Description: Dedicated system group for the jboss-eap daemon:
  The JBoss EAP server must use a dedicated group for its operation so that
  the system's security is not compromised by running it with superuser
  privileges.

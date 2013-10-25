@@ -8,11 +8,15 @@
 
 # Location of jboss
 #
-# JBOSS_HOME=/opt/jboss
+# JBOSS_HOME=/opt/jboss-eap
 
-# The username who should own the process.
+# Run JBoss EAP with this user ID.
 #
-# JBOSS_USER=jboss
+JBOSS_USER=jboss
+
+# Run JBoss EAP with this grup ID.
+#
+UBOSS_GROUP=jboss
 
 # The mode jboss should start, standalone or domain
 #
