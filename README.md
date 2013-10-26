@@ -12,7 +12,7 @@ How to use
 ==========
 
     git clone --recursive https://github.com/rualsa/eap-build-debian.git
-    apt-get install devscripts openjdk-6-jdk wget unzip
+    apt-get install devscripts openjdk-6-jdk wget unzip debhelper
     make
 
 sign and upload to your repo or install with dpkg
@@ -24,7 +24,7 @@ Prerequisite
 
 Tested on Debian Wheezy and Ubuntu 12.04 LTS
 - openjdk-6-jdk or Oracle JDK 6 (for building jboss)
-- devscripts (for building package)
+- devscripts, debhelper (for building package)
 - wget
 - unzip
 - at least 1GB of RAM
