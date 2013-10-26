@@ -12,6 +12,7 @@ How to use
 ==========
 
     git clone --recursive https://github.com/rualsa/eap-build-debian.git
+    apt-get install devscripts openjdk-6-jdk wget unzip
     make
 
 sign and upload to your repo or install with dpkg
@@ -21,8 +22,8 @@ sign and upload to your repo or install with dpkg
 Prerequisite
 ============
 
-Debian or ubuntu (I used Debian Wheezy)
-- openjdk-6-jdk/openjdk-7-jdk/oracle-java7-installer (for building jboss)
+Tested on Debian Wheezy and Ubuntu 12.04 LTS
+- openjdk-6-jdk or Oracle JDK 6 (for building jboss)
 - devscripts (for building package)
 - wget
 - unzip
@@ -32,7 +33,7 @@ Debian or ubuntu (I used Debian Wheezy)
 Versions
 ========
 
-At this moment JBoss EAP 6.1.1 is the only supported version of JBoss
+At this moment JBoss EAP 6.1.1 is the only supported version of JBoss.
 
 
 
