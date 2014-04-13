@@ -1,7 +1,7 @@
-VERSION=6.1.1
+VERSION=6.2.1
 
 ORIG_TAR=jboss-eap_$(VERSION).orig.tar.gz
-SOURCE_TAR=thirdparty/eap-build/work/jboss-eap-6.1-src/dist/target/jboss-eap-6.1.tar.gz
+SOURCE_TAR=thirdparty/eap-build/work/jboss-eap-6.2-src/dist/target/jboss-eap-6.2.tar.gz
 DEST=jboss-eap
 
 all: unpack
