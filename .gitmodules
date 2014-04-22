@@ -1,0 +1,3 @@
+[submodule "eap-build"]
+	path = eap-build
+	url = https://github.com/rvsoni/eap-build.git
