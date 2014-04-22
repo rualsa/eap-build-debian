@@ -1,7 +1,7 @@
-VERSION=6.2.1
+VERSION=6.2.2
 
 ORIG_TAR=jboss-eap_$(VERSION).orig.tar.gz
-SOURCE_TAR=thirdparty/eap-build/work/jboss-eap-6.2-src/dist/target/jboss-eap-6.2.tar.gz
+SOURCE_TAR=eap-build/work/jboss-eap-6.2-src/dist/target/jboss-eap-6.2.tar.gz
 DEST=jboss-eap
 
 all: unpack
@@ -24,7 +24,7 @@ unpack: $(ORIG_TAR)
 
 $(ORIG_TAR):
 	if ! [ -r $(SOURCE_TAR) ]; then \
-		(cd thirdparty/eap-build; ./build-eap.sh); \
+		(cd eap-build; ./build-eap.sh); \
 	fi;
  
 	cp ${SOURCE_TAR} ${ORIG_TAR}
