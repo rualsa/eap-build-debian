@@ -1,0 +1,3 @@
+[submodule "eap-build"]
+	path = eap-build
+	url = git://github.com/hasalex/eap-build
