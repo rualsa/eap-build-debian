@@ -1,4 +1,4 @@
-VERSION=6.2.2
+VERSION=6.2.3
 
 ORIG_TAR=jboss-eap_$(VERSION).orig.tar.gz
 SOURCE_TAR=eap-build/work/jboss-eap-6.2-src/dist/target/jboss-eap-6.2.tar.gz
